@@ -24,10 +24,34 @@ namespace test
         {
             InitializeComponent();
         }
+        private void Button_Reg_Click(object sender, RoutedEventArgs e)
+        {
+           Window1 window1 = new Window1();
+            window1.Show();
+            //try
+            //{
+            //    test.bd.data1337Entities1 entities1 = new bd.data1337Entities1();
+
+            //    var query = entities1.users.Select(x => x.login);
+            //    foreach (var item in query)
+            //    {
+            //        MessageBox.Show(item.ToString());
+            //    }
+
+            //    MessageBox.Show("База работает");
+
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("База не работает");
+            //    throw;
+            //}
+        }
 
         private void Button_Ent_Click(object sender, RoutedEventArgs e)
         {
-
+            Window2 window2 = new Window2();
+            window2.Show();
         }
     }
 }
