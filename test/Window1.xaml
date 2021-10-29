@@ -58,13 +58,9 @@
             VerticalAlignment="Center"
             >
             <Button 
-                Margin="0 0 50 0"
-                Height = "35" 
-                Width="80">Регистрация</Button>
-            <Button 
-                Margin="51 0 0 0"
-                Height="35" 
-                Width="80">Войти</Button>
+                Height="40" 
+                Width="80"
+                Click="Button_Reg1_Click">Регистрация</Button>
         </StackPanel>
 
     </Grid>

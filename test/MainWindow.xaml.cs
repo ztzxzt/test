@@ -27,6 +27,7 @@ namespace test
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
         {
            Window1 window1 = new Window1();
+            this.Close();
             window1.Show();
             //try
             //{
@@ -50,6 +51,10 @@ namespace test
 
         private void Button_Ent_Click(object sender, RoutedEventArgs e)
         {
+            string Entlogin
+            if () 
+            { 
+            }
             Window2 window2 = new Window2();
             window2.Show();
         }

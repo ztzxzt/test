@@ -23,5 +23,13 @@ namespace test
         {
             InitializeComponent();
         }
+
+        private void Button_Reg1_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow Main = new MainWindow();
+            this.Close();
+            Main.Show();
+        }
+
     }
 }
