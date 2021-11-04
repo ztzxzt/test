@@ -26,37 +26,36 @@ namespace test
         }
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
         {
-           Window1 window1 = new Window1();
+            Window1 window1 = new Window1();
             this.Close();
             window1.Show();
-            //try
-            //{
-            //    test.bd.data1337Entities1 entities1 = new bd.data1337Entities1();
 
-            //    var query = entities1.users.Select(x => x.login);
-            //    foreach (var item in query)
-            //    {
-            //        MessageBox.Show(item.ToString());
-            //    }
-
-            //    MessageBox.Show("База работает");
-
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("База не работает");
-            //    throw;
-            //}
         }
 
         private void Button_Ent_Click(object sender, RoutedEventArgs e)
         {
-            string Entlogin
-            if () 
-            { 
+            string log = login.Text.Trim();
+            string pass = password.Password;
+
+            if (log.Length > 5 && pass.Length > 6)
+            {
+                using (data1337Entities data1337 = new data1337Entities())
+                {
+                    var query = data1337.users.Where(x => x.login == log && x.password == pass).FirstOrDefault();
+
+                    if (query != null)
+                    {
+                        MessageBox.Show("КУ");
+                        Window2 profile = new Window2();
+                        this.Close();
+                        profile.Show();
+                    }
+                }
             }
-            Window2 window2 = new Window2();
-            window2.Show();
+            else
+            {
+                MessageBox.Show("Логин или пароль хуета");
+            }
         }
     }
 }

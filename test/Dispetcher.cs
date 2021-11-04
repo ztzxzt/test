@@ -7,25 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace test.bd
+namespace test
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Avtobus
+    public partial class Dispetcher
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Avtobus()
+        public Dispetcher()
         {
             this.Perevozka = new HashSet<Perevozka>();
         }
     
-        public int ID_Avtobus { get; set; }
-        public string Номер { get; set; }
-        public string Модель { get; set; }
-        public string Номерной_знак { get; set; }
-        public int Количество_мест { get; set; }
+        public int ID_Dispetcher { get; set; }
+        public string Ф_И_О { get; set; }
+        public System.DateTime Дата_рождения { get; set; }
+        public string Адрес { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
     
+        public virtual users users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Perevozka> Perevozka { get; set; }
     }

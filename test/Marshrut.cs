@@ -7,26 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace test.bd
+namespace test
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Bilet
+    public partial class Marshrut
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Bilet()
+        public Marshrut()
         {
             this.Perevozka = new HashSet<Perevozka>();
         }
     
-        public int ID_Bilet { get; set; }
-        public int Место { get; set; }
-        public int Стоимость { get; set; }
-        public System.DateTime Время { get; set; }
-        public string Ф_И_О { get; set; }
-        public string Паспорт { get; set; }
-        public Nullable<bool> Льготы { get; set; }
+        public int ID_Marshrut { get; set; }
+        public string Номер_маршрута { get; set; }
+        public string Пункт_назначения { get; set; }
+        public string Район { get; set; }
+        public string Область { get; set; }
+        public int Расстояние { get; set; }
+        public int Вес { get; set; }
+        public System.DateTime Время_отправки { get; set; }
+        public System.DateTime Время_прибытия { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Perevozka> Perevozka { get; set; }

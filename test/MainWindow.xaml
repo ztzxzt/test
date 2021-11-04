@@ -31,14 +31,14 @@
             Grid.Column="1"
             VerticalAlignment="Top">
             <TextBlock FontSize="20" TextAlignment="Center">Логин</TextBlock>
-            <TextBox Height="30" ></TextBox>
+            <TextBox x:Name="login" Height="30" Padding="1" FontSize="18"></TextBox>
         </StackPanel>
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
             VerticalAlignment="Bottom">
             <TextBlock FontSize="20" TextAlignment="Center">Пароль</TextBlock>
-            <TextBox Height="30" ></TextBox>
+            <PasswordBox x:Name="password" Height="30" Padding="1" FontSize="18"></PasswordBox>
         </StackPanel>
         <StackPanel
             Orientation="Horizontal"

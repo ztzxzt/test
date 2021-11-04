@@ -32,14 +32,14 @@
             Grid.RowSpan="2"
             VerticalAlignment="Center">
             <TextBlock FontSize="20" TextAlignment="Center">Введите логин:</TextBlock>
-            <TextBox Height="30" ></TextBox>
+            <TextBox x:Name="LoginReg" Height="30" Padding="1" FontSize="18"></TextBox>
         </StackPanel>
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
             VerticalAlignment="Center">
             <TextBlock FontSize="20" TextAlignment="Center">Введите пароль:</TextBlock>
-            <TextBox Height="30" ></TextBox>
+            <PasswordBox x:Name="PassReg" Height="30" Padding="1" FontSize="18"></PasswordBox>
         </StackPanel>
         <StackPanel
             Grid.Row="1"
@@ -47,7 +47,7 @@
             Grid.RowSpan="2"
             VerticalAlignment="Center">
             <TextBlock FontSize="20" TextAlignment="Center">Введите пароль еще раз:</TextBlock>
-            <TextBox Height="30" ></TextBox>
+            <PasswordBox x:Name="PassReg_2" Height="30" Padding="1" FontSize="18"></PasswordBox>
         </StackPanel>
         <StackPanel
             Orientation="Horizontal"

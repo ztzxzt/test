@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace test.bd
+namespace test
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class data1337Entities1 : DbContext
+    public partial class data1337Entities : DbContext
     {
-        public data1337Entities1()
-            : base("name=data1337Entities1")
+        public data1337Entities()
+            : base("name=data1337Entities")
         {
         }
     

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace test.bd
+namespace test
 {
     using System;
     using System.Collections.Generic;

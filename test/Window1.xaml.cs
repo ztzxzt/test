@@ -26,10 +26,44 @@ namespace test
 
         private void Button_Reg1_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow Main = new MainWindow();
-            this.Close();
-            Main.Show();
+            string loginReg = LoginReg.Text.Trim();
+            string passReg = PassReg.Password;
+            string passReg2 = PassReg_2.Password;
+            if (loginReg.Length > 5 && passReg.Length > 6 && passReg2.Length > 6)
+            {
+                if (passReg == passReg2)
+                {
+                    using (data1337Entities data1337 = new data1337Entities())
+                    {
+                        var query = data1337.users.Where(x => x.login.Equals(loginReg)).FirstOrDefault();
+
+                        if (query == null)
+                        {
+                            data1337.users.Add(new users()
+                            {
+                                login = loginReg,
+                                password = passReg,
+                            }
+                            );
+                            data1337.SaveChanges();
+                            MessageBox.Show("заебись вода");
+                            MainWindow Main = new MainWindow();
+                            this.Close();
+                            Main.Show();
+                        }
+                    }    
+                }
+                else
+                {
+                    MessageBox.Show("Пароли не совпадают");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Логин или пароль хуета");
+            } 
         }
+
 
     }
 }
