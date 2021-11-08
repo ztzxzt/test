@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:test"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="1000">
+    <!--создание разметки-->
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -19,6 +20,7 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
 
         </Grid.ColumnDefinitions>
+        <!--блок авторизации-->
         <StackPanel
             VerticalAlignment="Center"
             Grid.Row="0"
@@ -26,6 +28,7 @@
             Grid.ColumnSpan="3">
             <TextBlock FontSize="50" FontWeight="Bold" TextAlignment="Center">Авторизация</TextBlock>
         </StackPanel>
+        <!--блок текстблока и текстбокса логина-->
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
@@ -33,6 +36,7 @@
             <TextBlock FontSize="20" TextAlignment="Center">Логин</TextBlock>
             <TextBox x:Name="login" Height="30" Padding="1" FontSize="18"></TextBox>
         </StackPanel>
+        <!--блок текстблока и пассвордбокса пароля-->
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
@@ -40,6 +44,7 @@
             <TextBlock FontSize="20" TextAlignment="Center">Пароль</TextBlock>
             <PasswordBox x:Name="password" Height="30" Padding="1" FontSize="18"></PasswordBox>
         </StackPanel>
+        <!--блок кнопок регистрации и войти-->
         <StackPanel
             Orientation="Horizontal"
             Grid.Row="2"

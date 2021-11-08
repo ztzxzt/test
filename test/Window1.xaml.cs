@@ -26,17 +26,21 @@ namespace test
 
         private void Button_Reg1_Click(object sender, RoutedEventArgs e)
         {
+            //иницализация переменных
             string loginReg = LoginReg.Text.Trim();
             string passReg = PassReg.Password;
             string passReg2 = PassReg_2.Password;
-            if (loginReg.Length > 5 && passReg.Length > 6 && passReg2.Length > 6)
+            //Условие, если длина логина, пароля и подтв пароля больше 5 символов
+            if (loginReg.Length > 5 && passReg.Length > 5 && passReg2.Length > 5)
             {
+                //Условие, если пароль и подтв пароля совпадают
                 if (passReg == passReg2)
                 {
                     using (data1337Entities data1337 = new data1337Entities())
                     {
+                        //запрос к базе
                         var query = data1337.users.Where(x => x.login.Equals(loginReg)).FirstOrDefault();
-
+                        // если такого логина нет, то он вносится в базу данных вместе с паролем
                         if (query == null)
                         {
                             data1337.users.Add(new users()
@@ -45,8 +49,9 @@ namespace test
                                 password = passReg,
                             }
                             );
+                            //Сохранение изменений
                             data1337.SaveChanges();
-                            MessageBox.Show("заебись вода");
+                            MessageBox.Show("ОК");
                             MainWindow Main = new MainWindow();
                             this.Close();
                             Main.Show();
@@ -60,7 +65,7 @@ namespace test
             }
             else
             {
-                MessageBox.Show("Логин или пароль хуета");
+                MessageBox.Show("Логин или пароль меньше 6 символов");
             } 
         }
 

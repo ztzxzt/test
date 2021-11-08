@@ -26,6 +26,7 @@ namespace test
         }
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
         {
+            //Открытие окна регистрации
             Window1 window1 = new Window1();
             this.Close();
             window1.Show();
@@ -34,18 +35,21 @@ namespace test
 
         private void Button_Ent_Click(object sender, RoutedEventArgs e)
         {
+            //Инициализация переменных
             string log = login.Text.Trim();
-            string pass = password.Password;
+            string pass = password.Password
 
-            if (log.Length > 5 && pass.Length > 6)
+            //Условие, если длина логина и пароля больше 5 символов идет подключение к базе
+            if (log.Length > 5 && pass.Length > 5)
             {
                 using (data1337Entities data1337 = new data1337Entities())
                 {
+                    //Запрос, где пароль и логин совпадают с логином и паролем в базе
                     var query = data1337.users.Where(x => x.login == log && x.password == pass).FirstOrDefault();
-
+                    //Условие, если запрос не пустой, открывается окно личный кабинет
                     if (query != null)
                     {
-                        MessageBox.Show("КУ");
+                        MessageBox.Show("Успешно вошли");
                         Window2 profile = new Window2();
                         this.Close();
                         profile.Show();
@@ -54,7 +58,7 @@ namespace test
             }
             else
             {
-                MessageBox.Show("Логин или пароль хуета");
+                MessageBox.Show("Логин или пароль меньше 6 символов");
             }
         }
     }

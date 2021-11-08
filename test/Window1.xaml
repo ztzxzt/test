@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:test"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
+    <!--создание разметки-->
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -19,6 +20,7 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
             
         </Grid.ColumnDefinitions>
+        <!--Блок текстблока регистрации-->
         <StackPanel
             VerticalAlignment="Center"
             Grid.Row="0"
@@ -26,6 +28,7 @@
             Grid.ColumnSpan="3">
             <TextBlock FontSize="50" FontWeight="Bold" TextAlignment="Center">Регистрация:</TextBlock>
         </StackPanel>
+        <!--Блок текстблока и тексбокса логина-->
         <StackPanel
             Grid.Row="0"
             Grid.Column="1"
@@ -34,6 +37,7 @@
             <TextBlock FontSize="20" TextAlignment="Center">Введите логин:</TextBlock>
             <TextBox x:Name="LoginReg" Height="30" Padding="1" FontSize="18"></TextBox>
         </StackPanel>
+        <!--Блок текстблока и пассвордбокса пароля-->
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
@@ -41,6 +45,7 @@
             <TextBlock FontSize="20" TextAlignment="Center">Введите пароль:</TextBlock>
             <PasswordBox x:Name="PassReg" Height="30" Padding="1" FontSize="18"></PasswordBox>
         </StackPanel>
+        <!--Блок текстблока и пассвордбокса подтверждения пароля-->
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
@@ -49,6 +54,7 @@
             <TextBlock FontSize="20" TextAlignment="Center">Введите пароль еще раз:</TextBlock>
             <PasswordBox x:Name="PassReg_2" Height="30" Padding="1" FontSize="18"></PasswordBox>
         </StackPanel>
+        <!--Блок кнопки регистрации-->
         <StackPanel
             Orientation="Horizontal"
             Grid.Row="2"
