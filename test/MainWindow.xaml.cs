@@ -37,7 +37,7 @@ namespace test
         {
             //Инициализация переменных
             string log = login.Text.Trim();
-            string pass = password.Password
+            string pass = password.Password;
 
             //Условие, если длина логина и пароля больше 5 символов идет подключение к базе
             if (log.Length > 5 && pass.Length > 5)
