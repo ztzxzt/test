@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+
 
 namespace test
 {
@@ -31,49 +33,58 @@ namespace test
             string passReg = PassReg.Password;
             string passReg2 = PassReg_2.Password;
 
-                //Условие, если длина логина, пароля и подтв пароля больше 5 символов
-                if (loginReg.Length > 5 && passReg.Length > 5 && passReg2.Length > 5)
+
+            //Условие, если длина логина, пароля и подтв пароля больше 5 символов
+            if (loginReg.Length > 5 && passReg.Length > 5 && passReg2.Length > 5)
             {
-                //Условие, если пароль и подтв пароля совпадают
-                if (passReg == passReg2)
+                if (Regex.IsMatch(loginReg.ToLower(), "йцукенгшщзхъфывапролджэячсмитьбю.\\||//ъх!@#$%^&*()_+=-Ё~`:;\"\'<>,-@№ "))
                 {
-                    using (data1337Entities data1337 = new data1337Entities())
+                    //Условие, если пароль и подтв пароля совпадают
+                    if (passReg == passReg2)
                     {
-                        //запрос к базе
-                        var query = data1337.users.Where(x => x.login.Equals(loginReg)).FirstOrDefault();
-                        // если такого логина нет, то он вносится в базу данных вместе с паролем
-                        if (query == null || !loginReg.Contains("")
+                        using (data1337Entities data1337 = new data1337Entities())
                         {
-                            data1337.users.Add(new users()
+                            //запрос к базе
+                            var query = data1337.users.Where(x => x.login.Equals(loginReg)).FirstOrDefault();
+                            // если такого логина нет, то он вносится в базу данных вместе с паролем
+                            if (query == null || !loginReg.Contains(""))
                             {
-                                login = loginReg,
-                                password = passReg,
+                                data1337.users.Add(new users()
+                                {
+                                    login = loginReg,
+                                    password = passReg,
+                                }
+                                );
+                                //Сохранение изменений
+                                data1337.SaveChanges();
+                                MessageBox.Show("ОК");
+                                MainWindow Main = new MainWindow();
+                                this.Close();
+                                Main.Show();
                             }
-                            );
-                            //Сохранение изменений
-                            data1337.SaveChanges();
-                            MessageBox.Show("ОК");
-                            MainWindow Main = new MainWindow();
-                            this.Close();
-                            Main.Show();
+                            else
+                            {
+                                MessageBox.Show("Такой логин уже существует");
+                            }
                         }
-                        else 
-                        {
-                            MessageBox.Show("Такой логин уже существует");
-                        }
-                    }    
+                    }
+                    else
+                    {
+                        MessageBox.Show("Пароли не совпадают");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Пароли не совпадают");
+                    MessageBox.Show("Недопустимые символы");
                 }
             }
             else
             {
                 MessageBox.Show("Логин или пароль меньше 6 символов");
-            } 
+            }
         }
 
 
     }
 }
+
