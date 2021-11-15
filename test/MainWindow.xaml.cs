@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace test
 {
@@ -42,18 +43,25 @@ namespace test
             //Условие, если длина логина и пароля больше 5 символов идет подключение к базе
             if (log.Length > 5 && pass.Length > 5)
             {
-                using (data1337Entities data1337 = new data1337Entities())
+                if (!Regex.IsMatch(log.ToLower(), "[йцукенгшщзхъфывапролджэячсмитьбю.\\||//ъх!@#$%^&*()_+=-Ё~`:;\"\'<>,-@№]") && (!Regex.IsMatch(pass.ToLower(), "[йцукенгшщзхъфывапролджэячсмитьбю.\\||//ъх!@#$%^&*()_+=-Ё~`:;\"\'<>,-@№]")))
                 {
-                    //Запрос, где пароль и логин совпадают с логином и паролем в базе
-                    var query = data1337.users.Where(x => x.login == log && x.password == pass).FirstOrDefault();
-                    //Условие, если запрос не пустой, открывается окно личный кабинет
-                    if (query != null)
+                    using (data1337Entities data1337 = new data1337Entities())
                     {
-                        MessageBox.Show("Успешно вошли");
-                        Window2 profile = new Window2();
-                        this.Close();
-                        profile.Show();
+                        //Запрос, где пароль и логин совпадают с логином и паролем в базе
+                        var query = data1337.users.Where(x => x.login == log && x.password == pass).FirstOrDefault();
+                        //Условие, если запрос не пустой, открывается окно личный кабинет
+                        if (query != null)
+                        {
+                            MessageBox.Show("Успешно вошли");
+                            Window2 profile = new Window2();
+                            this.Close();
+                            profile.Show();
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Недопустимые символы: йцукенгшщзхъфывапролджэячсмитьбю.\\||//ъх!@#$%^&*()_+=-Ё~`:;\"\'<>,-@№");
                 }
             }
             else
