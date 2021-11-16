@@ -65,22 +65,31 @@ namespace test
                             else
                             {
                                 MessageBox.Show("Такой логин уже существует");
+                                LoginReg.Clear();
                             }
                         }
                     }
                     else
                     {
                         MessageBox.Show("Пароли не совпадают");
+                        PassReg.Clear();
+                        PassReg_2.Clear();
                     }
                 }
                 else
                 {
                     MessageBox.Show("Недопустимые символы: йцукенгшщзхъфывапролджэячсмитьбю.\\||//ъх!@#$%^&*()_+=-Ё~`:;\"\'<>,-@№");
+                    LoginReg.Clear();
+                    PassReg.Clear();
+                    PassReg_2.Clear();
                 }
             }
             else
             {
                 MessageBox.Show("Логин или пароль меньше 6 символов");
+                LoginReg.Clear();
+                PassReg.Clear();
+                PassReg_2.Clear();
             }
         }
 

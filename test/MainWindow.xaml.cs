@@ -62,11 +62,15 @@ namespace test
                 else
                 {
                     MessageBox.Show("Недопустимые символы: йцукенгшщзхъфывапролджэячсмитьбю.\\||//ъх!@#$%^&*()_+=-Ё~`:;\"\'<>,-@№");
+                    login.Clear();
+                    password.Clear();
                 }
             }
             else
             {
                 MessageBox.Show("Логин или пароль меньше 6 символов");
+                login.Clear();
+                password.Clear();
             }
         }
     }
