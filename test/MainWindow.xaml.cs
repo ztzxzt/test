@@ -45,7 +45,7 @@ namespace test
             {
                 if (!Regex.IsMatch(log.ToLower(), "[йцукенгшщзхъфывапролджэячсмитьбю.\\||//ъх!@#$%^&*()_+=-Ё~`:;\"\'<>,-@№]") && (!Regex.IsMatch(pass.ToLower(), "[йцукенгшщзхъфывапролджэячсмитьбю.\\||//ъх!@#$%^&*()_+=-Ё~`:;\"\'<>,-@№]")))
                 {
-                    using (data1337Entities data1337 = new data1337Entities())
+                    using(data1337Entities data1337 = new data1337Entities())
                     {
                         //Запрос, где пароль и логин совпадают с логином и паролем в базе
                         var query = data1337.users.Where(x => x.login == log && x.password == pass).FirstOrDefault();

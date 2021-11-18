@@ -93,7 +93,12 @@ namespace test
             }
         }
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow Main1 = new MainWindow();
+            this.Close();
+            Main1.Show();
+        }
     }
 }
 

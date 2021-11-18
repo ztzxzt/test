@@ -48,18 +48,17 @@
         <StackPanel
             Orientation="Horizontal"
             Grid.Row="2"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
+            Grid.Column="1"
             HorizontalAlignment ="Center"
             >
             <Button Click="Button_Reg_Click"
-                Margin="0 0 50 0"
+                Margin="0 0 84 0"
                 Height = "40" 
                 Width="80">Регистрация</Button>
             <Button Click="Button_Ent_Click"
-                Margin="51 0 0 0"
+                Margin="84 0 0 0"
                 Height="40" 
-                Width="80">Войти</Button>
+                Width="80" Content="Войти"/>
         </StackPanel>
     </Grid>
 </Window>
